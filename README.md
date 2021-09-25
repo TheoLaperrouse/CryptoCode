@@ -30,3 +30,4 @@ Fichier Cryptomonnaie -> Template Excell pour appliquer le script
 
 Script envVariable.sh -> Définir une variable d'environnement sur Linux indéfiniment.
 
+Le script se relance automatiquement toutes les 10 minutes
