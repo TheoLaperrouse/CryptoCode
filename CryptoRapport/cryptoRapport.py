@@ -11,6 +11,7 @@ vs_currencies = input("Renseigner la cryptomonnaie dans laquel vous souhaitez vo
 price_alert = float(input("Renseigner le prix au-dessus duquel vous souhaitez être alerter : "))
 
 while True:
+    #exemple : cg.get_price(ids='polychain-monsters', vs_currencies='bnb')
     price = float(cg.get_price(ids=id, vs_currencies=vs_currencies)[id][vs_currencies])
     print(price)
     if price > price_alert :
