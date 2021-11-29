@@ -13,7 +13,7 @@ xpath = "/html/body/div[1]/div[2]/div[1]/div[5]/div[2]/div/div[1]/div[3]/div[2]/
 links_polychain = []
 prix_total = 0
 
-with open(file='polychainMonster.html',mode='r') as html:
+with open(file='polychainMonsters.html',mode='r') as html:
     soup = BeautifulSoup(html, 'html.parser')
 attributes = soup.find_all('a',{"class":"boosterCardstyle__OpenSeaButton-sc-wkk6t8-27 hvVrpI"})
 
@@ -25,7 +25,7 @@ print(f'{len(links_polychain)} PolychainMonsters')
 for link in links_polychain:
     driver = webdriver.Chrome(service=s)
     driver.maximize_window()
-    driver.get(link+'&category=fixed-price')
+    driver.get(link+'&category=fixed-price&isBundle=0')
     time.sleep(10)
     prixMin = float(driver.find_element(By.XPATH, xpath).text.split()[0]) if driver.find_element(By.XPATH, xpath).text.split()[0] else 0
     print(prixMin)
